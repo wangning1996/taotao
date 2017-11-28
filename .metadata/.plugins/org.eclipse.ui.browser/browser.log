@@ -1,0 +1,8 @@
+
+11月 27, 2017 11:49:35.52 NEW SESSION
+11月 27, 2017 11:49:35.52 [1936:496:1127/114935.518:ERROR:gpu_process_transport_factory.cc(992)] Lost UI shared context.
+11月 27, 2017 11:52:42.41 [1936:496:1127/115242.412:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+11月 27, 2017 11:55:12.53 [1936:496:1127/115512.533:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+11月 27, 2017 11:58:15.67 [1936:496:1127/115815.676:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+11月 27, 2017 12:01:52.08 [1936:496:1127/120152.083:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+11月 27, 2017 12:07:48.47 [1936:496:1127/120748.479:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.

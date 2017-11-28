@@ -1,0 +1,33 @@
+package com.taotao.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.taotao.dao.JedisClient;
+import com.taotao.pojo.TbItem;
+import com.taotao.pojo.TbItemExample.Criteria;
+import com.taotao.service.UserService;
+
+public class UserServiceImpl implements UserService{
+
+	@Autowired
+	private JedisClient jedisClient;
+	@Override
+	public boolean checkUser(String username, String password) {
+		try {
+			if(jedisClient.get(username).equals(password))
+				return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		TbUserExample example = new TbUserExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andIdEqualTo(itemId);
+		List<TbItem> list = itemMapper.selectByExample(example);
+		if(list!=null&&list.size()>0) {
+			return list.get(0);
+		}
+		return false;
+	}
+}

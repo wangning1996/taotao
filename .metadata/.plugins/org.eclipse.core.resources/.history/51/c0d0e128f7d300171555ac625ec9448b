@@ -1,0 +1,27 @@
+package test;
+
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+
+import redis.clients.jedis.HostAndPort;
+import redis.clients.jedis.JedisCluster;
+
+public class test {
+
+	public static void main(String[] args) throws IOException {
+		
+		Set<HostAndPort> nodes = new HashSet<>();
+		nodes.add(new HostAndPort("192.168.2.128", 7001));
+		nodes.add(new HostAndPort("192.168.2.128", 7002));
+		nodes.add(new HostAndPort("192.168.2.128", 7003));
+		nodes.add(new HostAndPort("192.168.2.128", 7004));
+		nodes.add(new HostAndPort("192.168.2.128", 7005));
+		nodes.add(new HostAndPort("192.168.2.128", 7006));
+		JedisCluster cluster = new JedisCluster(nodes);
+		cluster.set("a", "100");
+		System.out.println(cluster.get("a"));
+		
+		cluster.close();
+	}
+}
